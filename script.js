@@ -190,7 +190,9 @@ form.addEventListener('submit', async (e) => {
   try {
     // Send email
     await emailjs.send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, templateParams, YOUR_PUBLIC_KEY);
-    showModal('Success!', 'Your message has been sent to rashmindaluvihare@gmail.com! I\'ll reply soon.');
+    const userName = templateParams.user_name;
+    const messagePreview = templateParams.message.length > 50 ? templateParams.message.substring(0, 50) + '...' : templateParams.message;
+    showModal(`Success, ${userName}!`, `Your message "${messagePreview}" sent to rashmindaluvihare@gmail.com. Reply soon!`);
     form.reset();
   } catch (error) {
     console.error('EmailJS error:', error);

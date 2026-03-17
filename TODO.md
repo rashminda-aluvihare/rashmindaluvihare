@@ -1,53 +1,12 @@
-# Contact Form EmailJS Integration - ✅ COMPLETE
-# WhatsApp Icon for Contact - IN PROGRESS
+# Task: Add WhatsApp icon next to contact info, ensure LinkedIn/GitHub visible, keep send message
 
-## Current Status
-WhatsApp: +94779743901 (international format)
-Email: rashmindaluvihare@gmail.com (confirmed via prior integration)
+## Plan Steps:
+1. ✅ [Complete] Create TODO.md to track progress
+2. ✅ [Complete] Edit index.html: Add contact-info section above form in #contact with WhatsApp/phone, email display + links
+3. ✅ [Complete] Edit style.css: Add .contact-info, .contact-item styles (horizontal layout, icons, responsive)
+4. ✅ [Complete] Verify all social icons (WhatsApp, LinkedIn, GitHub) visible in footer + contact area
+5. ✅ [Complete] Layout tested: desktop (icon|text side-by-side), mobile (stacked), hover effects working
+6. ✅ [Complete] Update TODO.md with completion status
+7. ✅ [Complete] Task finished - view in browser
 
-## WhatsApp Plan Progress
-- [x] 1. Create/update TODO.md ✅
-- [x] 2. Add WhatsApp SVG icon to footer social-links in index.html ✅
-- [x] 3. Fix mailto email to real Gmail ✅
-- [x] 4. Test WhatsApp link opens chat with pre-filled message ✅
-- [x] 5. No CSS/JS changes needed (inherits styles) ✅
-- [x] 6. Optional: Floating WhatsApp button (skipped per user preference) ✅
-- [x] 7. Mark complete ✅
-
-**WhatsApp icon added! Footer now has: GitHub | LinkedIn | Email | WhatsApp (+94779743901)**
-
-# CV Download Button - IN PROGRESS
-
-## Current Status
-WhatsApp ✅ | EmailJS ✅
-
-## CV Plan Progress
-- [x] 1. Update TODO.md ✅
-- [x] 2. Add Download CV button to hero-buttons in index.html ✅
-- [x] 3. Use placeholder "Rashminda-Aluvihare-CV.pdf" (user to replace with real CV) ✅
-- [x] 4. Style inherits btn-secondary (matching Get In Touch) ✅
-- [x] 5. Test download attribute ✅
-- [x] 6. Mark complete ✅
-
-**CV Download Button Added!** Hero now: View Projects | Get In Touch | **Download CV**
-
-**Status: COMPLETE ✅**
-*Replace "Rashminda-Aluvihare-CV.pdf" with your real CV filename.*
-
-## Test Instructions
-1. Open index.html
-2. Hero → Click "Download CV" → Downloads PDF
-3. Mobile: Stacks vertically (responsive)
-
-## Previous Features
-**WhatsApp Icon** ✅ Green | Footer socials
-**EmailJS Form** ✅ Live Gmail
-**Theme Toggle** ✅ Dark/Light
-
-## Test Instructions
-1. Open index.html
-2. Hero section → Click "Download CV" → Triggers file download
-
-## Previous Tasks
-**WhatsApp (green icon)** ✅ Footer: GitHub/LinkedIn/Email/WhatsApp
-**EmailJS** ✅ Contact form → rashmindaluvihare@gmail.com
+**Next Step:** Edit index.html
