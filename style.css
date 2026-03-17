@@ -793,6 +793,11 @@ section.visible {
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
+  .navbar.scrolled {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -806,11 +811,12 @@ section.visible {
     left: -100%;
     top: 70px;
     flex-direction: column;
-    background: var(--glass-bg);
+    background: var(--bg-primary);
     width: 100%;
     text-align: center;
     transition: 0.3s;
     padding: 2rem 0;
+    backdrop-filter: none !important;
   }
 
   .nav-menu.active {
@@ -824,6 +830,7 @@ section.visible {
   .hero-img {
     width: 150px;
     height: 150px;
+    margin: 2rem auto 2.5rem !important;
   }
 
   .btn {
@@ -833,6 +840,13 @@ section.visible {
 
   .section {
     padding: 60px 0;
+  }
+
+  .contact-link {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1.5rem;
   }
 
   .nav-dots {
