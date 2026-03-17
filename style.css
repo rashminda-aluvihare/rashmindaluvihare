@@ -657,8 +657,19 @@ section.visible {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .navbar {
+    background: var(--bg-primary) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
   .hamburger {
     display: flex;
+  }
+
+  .hamburger span {
+    background: #fff !important;
   }
 
   .nav-menu {

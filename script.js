@@ -152,30 +152,58 @@ if (typingText && cursor) {
   typeWriter();
 }
 
-// Modal Popup for Contact Form
+// EmailJS integration - Replace YOUR_XXX with dashboard values
+// 1. https://www.emailjs.com → Dashboard → Public Key  
+// 2. Email Services → SERVICE_ID
+// 3. Email Templates → TEMPLATE_ID
+
+const YOUR_PUBLIC_KEY = 'pDSCaLhtyhKKqRh0o'; // Account Public Key
+const YOUR_SERVICE_ID = 'service_qyz5l33';  // Gmail service
+const YOUR_TEMPLATE_ID = 'template_4h669eo'; // Contact form template
+
+emailjs.init(YOUR_PUBLIC_KEY);
+
+// Modal elements
 const modal = document.getElementById('modal');
 const modalTitle = document.getElementById('modal-title');
 const modalMessage = document.getElementById('modal-message');
 const closeBtn = document.querySelector('.close');
 
 const form = document.getElementById('contact-form');
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const nameInput = form.querySelector('input[type="text"]').value.trim();
-  const emailInput = form.querySelector('input[type="email"]').value.trim();
-  const messageInput = form.querySelector('textarea').value.trim();
+  
+  // Get form data
+  const formData = new FormData(form);
+  const templateParams = {
+    user_name: formData.get('user_name'),
+    user_email: formData.get('user_email'),
+    message: formData.get('message')
+  };
 
-  if (nameInput && emailInput && messageInput) {
-    modalTitle.textContent = 'Thank You!';
-    modalMessage.textContent = 'Your message has been sent! I ll get back to you soon.';
-    modal.style.display = 'block';
+  // Validate
+  if (!templateParams.user_name || !templateParams.user_email || !templateParams.message) {
+    showModal('Error', 'Please fill in all fields.');
+    return;
+  }
+
+  try {
+    // Send email
+    await emailjs.send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, templateParams, YOUR_PUBLIC_KEY);
+    showModal('Success!', 'Your message has been sent to rashmindaluvihare@gmail.com! I\'ll reply soon.');
     form.reset();
-  } else {
-    modalTitle.textContent = 'Error';
-    modalMessage.textContent = 'Please fill in all fields.';
-    modal.style.display = 'block';
+  } catch (error) {
+    console.error('EmailJS error:', error);
+    showModal('Error', 'Failed to send message. Please try again or email directly.');
   }
 });
+
+// Modal functions
+function showModal(title, message) {
+  modalTitle.textContent = title;
+  modalMessage.textContent = message;
+  modal.style.display = 'block';
+}
 
 closeBtn.addEventListener('click', () => {
   modal.style.display = 'none';
