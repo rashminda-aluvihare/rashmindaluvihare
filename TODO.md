@@ -1,12 +1,11 @@
-# Task: Add WhatsApp icon next to contact info, ensure LinkedIn/GitHub visible, keep send message
-
-## Plan Steps:
-1. ✅ [Complete] Create TODO.md to track progress
-2. ✅ [Complete] Edit index.html: Add contact-info section above form in #contact with WhatsApp/phone, email display + links
-3. ✅ [Complete] Edit style.css: Add .contact-info, .contact-item styles (horizontal layout, icons, responsive)
-4. ✅ [Complete] Verify all social icons (WhatsApp, LinkedIn, GitHub) visible in footer + contact area
-5. ✅ [Complete] Layout tested: desktop (icon|text side-by-side), mobile (stacked), hover effects working
-6. ✅ [Complete] Update TODO.md with completion status
-7. ✅ [Complete] Task finished - view in browser
-
-**Next Step:** Edit index.html
+# Projects Enhancement TODO
+Status | Step | Description | Notes
+---|---|---|---
+✅ | 0. Plan approved | User confirmed plan | 
+✅ | 1. Update index.html | Fix all project links to open in new tabs (target="_blank"), live demos, **removed Portfolio 2026** (now 4 projects only) | Complete
+✅ | 2. Create furniture-demo.html | Simple responsive furniture showcase demo | Complete
+✅ | 3. Create portfolio-2026-demo.html | Modern 2026 portfolio preview | Complete
+✅ | 4. Enhance style.css | Project buttons hover effects, ensure new tab icon | Complete
+ | 5. Update script.js | Optional click tracking | Skipped - not needed
+✅ | 6. Test | Verify all links work, new tabs open | All project buttons now open in new tabs ✓
+✅ | 7. Demo | Open index.html live preview | Ready ✓

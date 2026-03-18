@@ -546,6 +546,16 @@ body {
   flex-wrap: wrap;
 }
 
+.project-links a::after {
+  content: '';
+  margin-left: 0.5rem;
+  font-size: 0.8em;
+}
+
+.project-links a:hover::after {
+  content: '↗';
+}
+
 @media (max-width: 768px) {
   .project-links {
     flex-direction: column;
@@ -853,4 +863,3 @@ section.visible {
     display: none;
   }
 }
-
