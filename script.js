@@ -175,30 +175,49 @@ form.addEventListener('submit', async (e) => {
   
   // Get form data
   const formData = new FormData(form);
-  const templateParams = {
-    user_name: formData.get('user_name'),
-    user_email: formData.get('user_email'),
-    message: formData.get('message')
-  };
+  const user_name = formData.get('user_name')?.trim() || 'Anonymous Visitor';
+  const message = formData.get('message')?.trim();
 
   // Validate
-  if (!templateParams.user_name || !templateParams.user_email || !templateParams.message) {
-    showModal('Error', 'Please fill in all fields.');
+  if (!message || message.length < 10) {
+    showModal('Error', 'Please enter a message (min 10 chars).');
     return;
   }
+
+  const templateParams = {
+    user_name: user_name,
+    user_email: 'rashmindaluvihare@gmail.com', // Hardcoded for EmailJS
+    message: message
+  };
 
   try {
     // Send email
     await emailjs.send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, templateParams, YOUR_PUBLIC_KEY);
-    const userName = templateParams.user_name;
-    const messagePreview = templateParams.message.length > 50 ? templateParams.message.substring(0, 50) + '...' : templateParams.message;
-    showModal(`Success, ${userName}!`, `Your message "${messagePreview}" sent to rashmindaluvihare@gmail.com. Reply soon!`);
+    const messagePreview = message.length > 50 ? message.substring(0, 50) + '...' : message;
+    showModal(`Success, ${user_name}!`, `Your message "${messagePreview}" sent. Reply soon via email!`);
     form.reset();
+    form.querySelector('textarea').focus();
   } catch (error) {
     console.error('EmailJS error:', error);
-    showModal('Error', 'Failed to send message. Please try again or email directly.');
+    showModal('Error', 'Failed to send. Use direct email/WhatsApp above.');
   }
 });
+
+// Copy Email Function
+function copyEmail() {
+  navigator.clipboard.writeText('rashmindaluvihare@gmail.com').then(() => {
+    const btn = event.target;
+    const originalText = btn.textContent;
+    btn.textContent = '✅';
+    btn.style.background = 'var(--accent-secondary)';
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = 'var(--accent)';
+    }, 2000);
+  }).catch(() => {
+    showModal('Error', 'Copy failed. Select email manually.');
+  });
+}
 
 // Modal functions
 function showModal(title, message) {
